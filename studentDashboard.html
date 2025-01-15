@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard | Past Paper Finder</title>
+    <link rel="stylesheet" href="studentDashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h2>Past Paper Finder</h2>
+        <nav>
+          <a href="#" class="active"><i class="fa fa-home"></i> Dashboard</a>
+          <a href="#favorites"><i class="fa fa-heart"></i> Favorites</a>
+          <a href="#requests"><i class="fa fa-envelope"></i> Request Papers</a>
+          <a href="logout.php"><i class="fa fa-sign-out-alt"></i> Logout</a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main>
+        <!-- Search Bar -->
+        <section class="search-bar">
+          <h1>Welcome, [Student Name]!</h1>
+          <form method="GET" action="search.php">
+            <input
+              type="text"
+              name="query"
+              placeholder="Search by subject, grade, or year..."
+            />
+            <button type="submit"><i class="fa fa-search"></i> Search</button>
+          </form>
+        </section>
+
+        <!-- Papers Section -->
+        <section class="papers">
+          <h2>Available Papers</h2>
+          <div class="paper-list">
+            <!-- Example Paper Card -->
+            <div class="paper-card">
+              <h3>Mathematics (2023)</h3>
+              <p>Grade 12</p>
+              <a href="download.php?id=1" class="btn">Download</a>
+              <button class="btn-fav" onclick="addToFavorites(1)">
+                Add to Favorites
+              </button>
+            </div>
+            <!-- Repeat dynamically from PHP -->
+          </div>
+        </section>
+
+        <!-- Favorites Section -->
+        <section id="favorites" class="favorites">
+          <h2>Your Favorites</h2>
+          <div class="paper-list">
+            <!-- Dynamically populated -->
+          </div>
+        </section>
+
+        <!-- Request Papers Section -->
+        <section id="requests" class="request-papers">
+          <h2>Request Missing Papers</h2>
+          <form method="POST" action="request.php">
+            <input type="text" name="subject" placeholder="Subject" required />
+            <input type="text" name="grade" placeholder="Grade" required />
+            <input type="text" name="year" placeholder="Year" required />
+            <textarea
+              name="details"
+              placeholder="Additional Details"
+            ></textarea>
+            <button type="submit">Submit Request</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

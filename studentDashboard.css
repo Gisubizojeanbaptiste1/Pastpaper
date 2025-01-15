@@ -1,0 +1,96 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background: #1d3557;
+  color: #f1faee;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.sidebar nav a {
+  display: block;
+  color: #f1faee;
+  padding: 10px 0;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: background 0.3s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: #457b9d;
+  padding-left: 10px;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar h1 {
+  margin-bottom: 10px;
+}
+
+.search-bar form {
+  display: flex;
+  gap: 10px;
+}
+
+.papers,
+.favorites,
+.request-papers {
+  margin-bottom: 40px;
+}
+
+.paper-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.paper-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+}
+
+.paper-card .btn {
+  display: inline-block;
+  padding: 10px;
+  background: #457b9d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.paper-card .btn-fav {
+  display: inline-block;
+  padding: 10px;
+  background: #e63946;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
